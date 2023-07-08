@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            display: flex;
+            width: 100%;
+            height: 1200px;
+            
+        }
+        .box{
+            display: flex;
+        
+
+        }
+        .wap{
+            position: relative;
+         
+        }
+    </style>
+</head>
+<body background="C:\Users\althaf\Desktop\javascript\aa.jpg" style="">
+    
+    <div class="box">
+        <h1>Weather App</h1>
+        <h1 id="kan"></h1>
+        <h1 id="kan1"></h1>
+        <h1 id="kan2"></h1>
+    </div>
+    <div class="wap">
+        Enter city name:<input type="text" value=""><br><br>
+        <input type="submit" value="check weather">
+
+    </div>
+  
+
+
+   <script>
+    //store API in the form of string
+    //let place=prompt("Enter the area")
+    //let url=`https://goweather.herokuapp.com/weather/${place}`
+    //fetch the API using featch() method
+    let fetched_url=fetch(url)
+    //process fetched api
+    fetched_url.then((resp)=>{
+        return resp.json()
+    })
+    .then((datas)=>{
+        let disc=`tempetature:${place} is${datas['temperature']}` 
+        let speed=`speed:${place} is ${datas['wind']}`
+        let tem=`descriptions of weather :${place} is${datas['description']}`
+        console.log(datas)
+        document.getElementById("kan").innerHTML=disc
+        document.getElementById("kan1").innerHTML=speed
+        document.getElementById("kan2").innerHTML=tem
+    })
+   </script> 
+</body>
+</html>

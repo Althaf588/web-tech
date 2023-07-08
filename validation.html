@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+    <link rel="stylesheet" href="styl.css">
+    <script src="codes.js"></script>
+</head>
+<body>
+<form action="https://pyspiders.com/">
+   <div class="outer">
+    <h1>validation</h1>
+    <p id="error"></p>
+    <div class="form">
+        <label for="inp">enter user name:</label>
+        <input type="text" id="inp">
+        <label for="pass">enter password:</label>
+        <input type="password" name="" id="pass">
+        <div class="checkbtn">
+            <input type="checkbox" name="" id="check" onclick="showpass()">
+             <label for="check" id="passlable">show password</label>
+        </div>
+        <button type="submit" onclick="return clickBtn()" id="btn">validate</button>
+    </div>
+</form>
+    <h2 id="succ"></h2>
+   </div> 
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    enter number:<input type="text" name="" id="num">
+    <br><br>
+    
+    <p id="res"></p>
+    <button onclick="numValid()">validate</button>
+    <h2 id="success"></h2>
+    <script>
+        function numValid(){
+            let number=document.getElementById("num").value
+            if(number===''||number===null){
+                msg='Number field shouldnt empty'
+                res.style.color='red'
+            }
+            else if(isNaN(number)){
+                msg="enterd valid number"
+                res.style.color='red'
+
+            }
+            else if(number.length!=10){
+                msg='Enter 10 digit number'
+                res.style.color='red'
+
+            }
+            else{
+                res.style.display='none'
+                document.getElementById('success').innerHTML="validation successful"
+                success.style.color='green'
+            }
+            document.getElementById("res").innerHTML=msg
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+           
+            height: 500px;
+            width: 500px;
+            border: solid;
+            border-radius: 20px;
+            padding-top: 20px;
+            
+            
+        }
+    </style>
+</head>
+
+<body background="C:\Users\althaf\Desktop\javascript\aa.jpg" >
+   <div>
+        <fieldset style="width: fit-content; border-radius: 20px;">
+        ENTER CITY NAME: <input type="text" id="in"><br><br>
+
+        <button type="submit" onclick="fun()" id="new">CHECK WEATHER</button>
+        <h4>Weather Report :</h4>
+        
+
+        <h4 id="abc1"></h4>
+        <h4 id="abc2"></h4>
+        <h4 id="abc3"></h4>
+    </div>
+
+        <script>
+            function fun() {
+                let place = document.getElementById('in').value
+
+                let url = `https://goweather.herokuapp.com/weather/${place}`
+                let fetched_url = fetch(url)
+
+
+
+                fetched_url
+                    .then((resp) => {
+                        return resp.json()
+                    })
+                    .then((datas) => {
+                        let temp = `temperature :${datas['temperature']}`
+                        let wind = `wind : ${datas['wind']}`
+                        let desc = `description : ${datas['description']}`
+                        console.log(datas)
+
+                        document.getElementById('abc1').innerHTML = temp
+                        document.getElementById('abc2').innerHTML = wind
+                        document.getElementById('abc3').innerHTML = desc
+
+                    })
+            }
+        </script>
+    </fieldset>
+   
+</body>
+
+</html>
